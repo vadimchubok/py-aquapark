@@ -20,10 +20,10 @@ class IntegerRange:
     def __set__(self, instance: SlideLimitationValidator, value: int) -> None:
         if not isinstance(value, int):
             raise TypeError(f"Expected int, got {type(value)}")
-        if not self.min_value <= value <= self.max_value:
+        if not self.min_amount <= value <= self.max_amount:
             raise ValueError(f"Expected {self.protected_name} "
-                             f"to be between {self.min_value} "
-                             f"and {self.max_value}")
+                             f"to be between {self.min_amount} "
+                             f"and {self.max_amount}")
         setattr(instance, self.protected_name, value)
 
 
